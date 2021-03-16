@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.board.service.impl.BoardMapper">	<!-- 인터페이스경로,이름 -->
+
+	<insert id="insertBoard" parameterType="com.company.board.service.BoardVO">
+	
+		<selectKey keyProperty="seq" resultType="string" order="BEFORE">
+			SELECT NVL(MAX(SEQ), 0) + 1 FROM BOARD2
+		</selectKey>
+	
+		INSERT INTO board2 (SEQ,
+							TITLE,
+							WRITER,
+							CONTENT
+							<if test="filename != null and filename != ''">
+							,FILENAME
+							</if>
+							)
+					VALUES (#{seq},
+							#{title},
+							#{writer},
+							#{content}
+							<if test="filename != null and filename != ''">
+							,#{filename}
+							</if>
+							)
+			
+	</insert>
+	
+	<select id="getBoard" parameterType="com.company.board.service.BoardVO" 
+							resultType="com.company.board.service.BoardVO">
+		SELECT * FROM BOARD2 
+		WHERE SEQ = #{seq}
+	</select>
+</mapper>

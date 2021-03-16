@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.temp.service.impl.EmpMapper">
+
+	<select id="getEmpList" resultType="map">
+		select first_name "firstName",
+		       last_name  "lastName",
+		       salary     "salary",
+		       email      "email" 
+		from employees
+	</select>
+	
+	<!-- 일별 판매 합계 -->
+	<select id="getDay" resultType="map">		<!-- 타입은 vo나 map으로 -->
+	SELECT sale_date, 
+			SUM(sale_seq) "sum_price"				<!-- "" 안해주면 대문자로 인식 -->
+	FROM SALE_TBL_10
+	GROUP BY sale_date
+	</select>
+	
+</mapper>
