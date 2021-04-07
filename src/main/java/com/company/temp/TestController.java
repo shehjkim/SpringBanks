@@ -61,7 +61,7 @@ public class TestController {
 	@RequestMapping("/getTest5/{firstName}/{salary}")   
 	public String getTest5(   @PathVariable  String firstName,
 	                          @PathVariable  String salary,
-	                          @ModelAttribute("tvo") TestVO vo,
+	                          @ModelAttribute("tvo") TestVO vo, //tvo에 TestVO담음
 	                          Model model
 	                          ) {
 		vo.setFirstName(firstName);
@@ -71,7 +71,8 @@ public class TestController {
 		return "test";
 	}
 	
-	@RequestMapping("/getTest6/{firstName}/{salary}")   
+	@RequestMapping("/getTest6/{firstName}/{salary}")   //kim/5000입력시
+	//http://localhost:8055/temp/getTest6/kim/5000 -> view페이지 넘겨줌
 	public ModelAndView getTest6(   @PathVariable  String firstName,
 	                          @PathVariable  String salary,
 	                          @ModelAttribute("tvo") TestVO vo) {

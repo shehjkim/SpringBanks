@@ -31,8 +31,8 @@ import com.google.gson.Gson;
 public class BankAPI {
 
 	String host = "https://testapi.openbanking.or.kr";
-	String client_id = "DPV8GH7pNOp0GCbyM2APvlzdIsWMeT2G619H7ZDc";
-	String client_secret="goAag7uEhDx16xXmdgJ1OePNxste9N8z7KPPcqIi";
+	String client_id = "a24b461b27b243abb7444d0084be4664";
+	String client_secret="ae9521614c8d40df83c116c7a5755899";
 	String redirect_uri = "http://localhost/bank/callback";
 	String use_org_code = "T990034430";
 	String org_access_token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJUOTkwMDM0NDMwIiwic2NvcGUiOlsib29iIl0sImlzcyI6Imh0dHBzOi8vd3d3Lm9wZW5iYW5raW5nLm9yLmtyIiwiZXhwIjoxNjIzMzA2NTY5LCJqdGkiOiIwZjUyODk5NC01Y2MzLTQxMzItYjcwMC1hZWNhZjM1NmE5MjQifQ.x12c9TwQQqLCsoWDCTYhJKF-W1kqchNHBm6NakfER6Q";
